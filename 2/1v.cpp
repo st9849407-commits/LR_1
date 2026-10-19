@@ -1,38 +1,22 @@
 #include <iostream>
 #include <cmath>
-
 using namespace std;
 
 int main() {
-    // Встановлюємо українську мову в консолі
-    setlocale(LC_ALL, "Ukrainian");
+    double x = -2;
+    double a = 3;   
+    double b = 2;  
+    double y;
 
-    double x, a, b, Y;
-
-    cout << "=== Завдання 1 (Варіант 3) ===" << endl;
-    cout << "Введіть значення x: ";
-    cin >> x;
-    cout << "Введіть значення a: ";
-    cin >> a;
-    cout << "Введіть значення b (не має дорівнювати 0): ";
-    cin >> b;
-
-    // Перевірка ділення на нуль
-    if (b == 0) {
-        cout << "Помилка: ділення на нуль (b = 0)!" << endl;
-        return 1;
+    if (x <= 0) {
+        y = pow(x, 3) + a / b;
     }
-
-    // Обчислення значення Y залежно від x
-    if (x < 0) {
-        Y = pow(x, 3) + (a / b);
-    } else if (x == 0) {
-        Y = sin(a / b) + 4 * b * x;
-    } else { // x > 0
-        Y = sqrt(x) + (a / b);
+    else if (x == 0) {
+        y = sin(a / b) + 4 * b * x;
     }
-
-    cout << "Результат Y = " << Y << endl;
-
+    else {
+        y = sqrt(x) + a / b;
+    }
+    cout << "y = " << y << endl;
     return 0;
 }
